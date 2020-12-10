@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="SfMaps_DifferentView.UWP.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfMaps_DifferentView.UWP"
+    RequestedTheme="Light">
+
+</Application>
