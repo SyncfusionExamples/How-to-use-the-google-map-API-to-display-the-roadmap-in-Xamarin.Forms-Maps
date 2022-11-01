@@ -1,69 +1,52 @@
-# How-to-use-the-google-map-API-to-display-the-roadmap-in-Xamarin.Forms-Maps
-This article explains how to show the different map view using the google map API using  the imagery layer of Xamarin.Forms Syncfusion SfMaps.
+# How to use the google map API to display the roadmap in Xamarin.Forms Maps
 
-*Street map view
- 
- ![](Output.png)
+This repository contains sample for how to use the google map API to display the roadmap in the [Syncfusion Xamarin.Forms Maps](https://help.syncfusion.com/xamarin/maps/getting-started) control.
 
-To load the google map view, assign the Google maps API Uri link (or any tile maps provider) with required x, y, zoom level and lyrs value to the Uri property from the argument of RequestTileUri event. You can get the different maps view based on the value of lyrs as per in below table values
+Please refer the KB through this [link](https://www.syncfusion.com/kb/12164/how-to-use-the-google-map-api-to-display-a-different-layer-map-such-as-the-street-map-the).
 
-**Layer Value	View Type**
+## Syncfusion controls
 
-h	Roads only 
-m	Standard roadmap (street map) 
-p	Terrain 
-r	Somehow altered roadmap 
-s	Satellite only
-t	Terrain only 
-y	Hybrid 
+This project used the following Syncfusion control(s):
+* [SfMaps](https://www.syncfusion.com/xamarin-ui-controls/xamarin-maps)
 
-Please find the code snippet
+## Supported platforms
 
-[XAML]
+| Platforms | Supported versions |
+| --------- | ------------------ |
+| Android   | API level 21 and later versions |
+| iOS | iOS 9.0 and later versions |
+| UWP | Windows 10 devices |
 
-*Define the SfMaps with required marker settings and invoke the RequestTileUri event
+## Requirements to run the sample
 
-```
-<maps:SfMaps ZoomLevel="2">
-        <maps:SfMaps.Layers>
-            <maps:ImageryLayer RequestTileUri="ImageryLayer_RequestTileUri">
-                <maps:ImageryLayer.MarkerSettings>
-                    <maps:MapMarkerSetting MarkerIcon="Image" ImageSource="pin.png" IconSize="15"/>
-                </maps:ImageryLayer.MarkerSettings>
-                <maps:ImageryLayer.Markers>
-                    <maps:MapMarker Latitude="38.8833" Longitude= "-77.0167"/>
-                    <maps:MapMarker Latitude="-15.7833" Longitude= "-47.8667"/>
-                    <maps:MapMarker  Latitude="21.0000" Longitude= "78.0000"/>
-                    <maps:MapMarker Latitude="35.0000" Longitude= "103.0000" />
-                    <maps:MapMarker Latitude="-4.0383" Longitude= "21.7586" />
-                </maps:ImageryLayer.Markers>
-            </maps:ImageryLayer>
-        </maps:SfMaps.Layers>
-    </maps:SfMaps>
+* [Visual Studio](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)
 
-```
-[C#]
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/xamarin/system-requirements)
 
-*Here loading the Standard roadmap hence setting the lyrs=m
+## How to run the sample
 
-```
-        private void ImageryLayer_RequestTileUri(object sender, Syncfusion.SfMaps.XForms.TileUriArgs e)
-        {
-            var link = "http://mt1.google.com/vt/lyrs=m&x=" + e.X.ToString() + "&y=" + e.Y.ToString() + "&z=" + e.ZoomLevel.ToString();            
-            e.Uri = link;
-        }
-```
+1. Clone the sample and open it in Visual Studio.
 
-**See also**
- 
-[How to customize the bubble marker in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/bubblemarker#customizing-bubble-marker)
- 
-[How to customize the data labels in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/datalabels#customizing-data-labels)
- 
-[How to customize the legend in Xamarin.Forms Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/legend)
- 
-[How to customize the tooltip in Xamarin Maps (SfMaps)](https://help.syncfusion.com/xamarin/maps/tooltip)
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   
+2. Register your license key in the App.xaml.cs file as demonstrated in the following code.
 
+		public App()
+		{
+			//Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+	
+			InitializeComponent();
+	
+			MainPage = new App1.MainPage();
+		}
+		
+	Refer to this [link](https://help.syncfusion.com/xamarin/licensing/overview) for more details.
+	
+3. Clean and build the application.
 
+4. Run the application.
 
+## License
 
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples.
